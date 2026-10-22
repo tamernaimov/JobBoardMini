@@ -1,0 +1,49 @@
+﻿@model JobBoardMini.Library.JobBoardMini.Library.Internship
+
+@{
+    ViewData["Title"] = "Добави стаж";
+}
+
+<h1>Добави нов стаж</h1>
+
+<form asp-action="Create" method="post">
+
+    <p>
+        <label asp-for="Position">Позиция:</label>
+        <input asp-for="Position" />
+        <span asp-validation-for="Position"></span>
+    </p>
+
+    <p>
+        <label asp-for="Organization">Организация:</label>
+        <input asp-for="Organization" />
+        <span asp-validation-for="Organization"></span>
+    </p>
+
+    <p>
+        <label asp-for="City">Населено място:</label>
+        <input asp-for="City" />
+        <span asp-validation-for="City"></span>
+    </p>
+
+    <p>
+        <label asp-for="DurationWeeks">
+            Продължителност в седмици:
+        </label>
+        <input asp-for="DurationWeeks" type="number" min="1" />
+        <span asp-validation-for="DurationWeeks"></span>
+    </p>
+
+    <p>
+        <label asp-for="Description">Описание:</label>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </p>
+
+    <button type="submit">Запази</button>
+
+</form>
+
+<p>
+    <a asp-action="Index">Назад към стажовете</a>
+</p>
