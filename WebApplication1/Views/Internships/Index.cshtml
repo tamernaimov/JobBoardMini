@@ -1,4 +1,4 @@
-﻿@model List<JobBoardMini.Library.Internship>
+﻿@model JobBoardMini.Web.ViewModels.Internships.InternshipsIndexViewModel
 
 @{
     ViewData["Title"] = "Ученически стажове";
@@ -14,7 +14,7 @@
     </a>
 </p>
 
-@if (!Model.Any())
+@if (!Model.Internships.Any())
 {
     <p>Все още няма добавени стажове.</p>
 }
@@ -30,9 +30,8 @@ else
                 <th>Описание</th>
             </tr>
         </thead>
-
         <tbody>
-            @foreach (var internship in Model)
+            @foreach (var internship in Model.Internships)
             {
                 <tr>
                     <td>@internship.Position</td>

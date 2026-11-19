@@ -1,4 +1,4 @@
-﻿
+﻿using JobBoardMini.Web.ViewModels.Internships;
 using JobBoardMini.Library;
 using JobBoardMini.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -16,9 +16,12 @@ namespace JobBoardMini.Web.Controllers
 
         public IActionResult Index()
         {
-            var internships = _internshipService.GetAll();
+            var viewModel = new InternshipsIndexViewModel
+            {
+                Internships = _internshipService.GetAll()
+            };
 
-            return View(internships);
+            return View(viewModel);
         }
 
         public IActionResult Create()
