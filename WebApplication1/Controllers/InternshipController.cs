@@ -1,22 +1,22 @@
 ﻿
-using JobBoardMini.Data;
 using JobBoardMini.Library;
+using JobBoardMini.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JobBoardMini.Web.Controllers
 {
     public class InternshipsController : Controller
     {
-        private readonly JobBoardDbContext _db;
+        private readonly IInternshipService _internshipService;
 
-        public InternshipsController(JobBoardDbContext db)
+        public InternshipsController(IInternshipService internshipService)
         {
-            _db = db;
+            _internshipService = internshipService;
         }
 
         public IActionResult Index()
         {
-            var internships = _db.Internships.ToList();
+            var internships = _internshipService.GetAll();
 
             return View(internships);
         }
@@ -35,8 +35,7 @@ namespace JobBoardMini.Web.Controllers
                 return View(internship);
             }
 
-            _db.Internships.Add(internship);
-            _db.SaveChanges();
+            _internshipService.Add(internship);
 
             return RedirectToAction(nameof(Index));
         }

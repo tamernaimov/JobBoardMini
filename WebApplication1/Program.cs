@@ -1,4 +1,5 @@
-
+using JobBoardMini.Services.Interfaces;
+using JobBoardMini.Services.Services;
 using JobBoardMini.Data;
 using Microsoft.EntityFrameworkCore;
 namespace WebApplication1
@@ -11,6 +12,7 @@ namespace WebApplication1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IInternshipService, InternshipService>();
             builder.Services.AddDbContext<JobBoardDbContext>(options =>
             options.UseSqlServer(
             builder.Configuration.GetConnectionString("DefaultConnection")));

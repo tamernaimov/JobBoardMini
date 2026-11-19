@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\JobBoardMini.Library.csproj" />
     <ProjectReference Include="..\JobBoardMini.Data\JobBoardMini.Data.csproj" />
+    <ProjectReference Include="..\JobBoardMini.Services\JobBoardMini.Services.csproj" />
   </ItemGroup>
 
 </Project>
