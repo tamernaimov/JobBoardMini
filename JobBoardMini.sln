@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoardMini.Library", "Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoardMini.Web", "WebApplication1\JobBoardMini.Web.csproj", "{7AAB02D7-5945-4792-BCF8-D0BFE88DEC89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBoardMini.Data", "JobBoardMini.Data\JobBoardMini.Data.csproj", "{E091C2DF-10D9-4D1A-A547-ABF9653914A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7AAB02D7-5945-4792-BCF8-D0BFE88DEC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AAB02D7-5945-4792-BCF8-D0BFE88DEC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AAB02D7-5945-4792-BCF8-D0BFE88DEC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E091C2DF-10D9-4D1A-A547-ABF9653914A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E091C2DF-10D9-4D1A-A547-ABF9653914A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E091C2DF-10D9-4D1A-A547-ABF9653914A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E091C2DF-10D9-4D1A-A547-ABF9653914A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
