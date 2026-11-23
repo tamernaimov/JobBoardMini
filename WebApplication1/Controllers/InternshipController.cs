@@ -1,7 +1,8 @@
-﻿using JobBoardMini.Web.ViewModels.Internships;
-using JobBoardMini.Library;
+﻿using JobBoardMini.Data.Models;
 using JobBoardMini.Services.Interfaces;
+using JobBoardMini.Web.ViewModels.Internships;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace JobBoardMini.Web.Controllers
 {
@@ -26,19 +27,28 @@ namespace JobBoardMini.Web.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var viewModel = new InternshipCreateViewModel
+            {
+                Companies = _internshipService.GetCompanies(),
+                Categories = _internshipService.GetCategories()
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Internship internship)
+        public IActionResult Create(InternshipCreateViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(internship);
+                viewModel.Companies = _internshipService.GetCompanies();
+                viewModel.Categories = _internshipService.GetCategories();
+
+                return View(viewModel);
             }
 
-            _internshipService.Add(internship);
+            _internshipService.Add(viewModel.Internship);
 
             return RedirectToAction(nameof(Index));
         }

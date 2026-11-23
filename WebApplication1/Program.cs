@@ -2,7 +2,7 @@ using JobBoardMini.Services.Interfaces;
 using JobBoardMini.Services.Services;
 using JobBoardMini.Data;
 using Microsoft.EntityFrameworkCore;
-namespace WebApplication1
+namespace JobBoardMini.Web
 {
     public class Program
     {

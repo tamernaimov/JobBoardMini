@@ -1,5 +1,5 @@
 ﻿using JobBoardMini.Data;
-using JobBoardMini.Library;
+using JobBoardMini.Data.Models;
 using JobBoardMini.Services.DTOs.Internships;
 using JobBoardMini.Services.Interfaces;
 
@@ -21,12 +21,23 @@ namespace JobBoardMini.Services.Services
                 {
                     Id = i.Id,
                     Position = i.Position,
-                    Organization = i.Organization,
                     City = i.City,
                     DurationWeeks = i.DurationWeeks,
-                    Description = i.Description
+                    Description = i.Description,
+                    Organization = i.Company.Name,
+                    Category = i.Category.Name
                 })
                 .ToList();
+        }
+
+        public List<Company> GetCompanies()
+        {
+            return _db.Companies.ToList();
+        }
+
+        public List<Category> GetCategories()
+        {
+            return _db.Categories.ToList();
         }
 
         public void Add(Internship internship)

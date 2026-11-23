@@ -6,14 +6,9 @@
 
 <h1>Ученически стажове</h1>
 
-<p>
-    <a asp-controller="Internships"
-       asp-action="Create"
-       class="btn btn-primary">
-        Добави нов стаж
-    </a>
-</p>
-
+<a href="/Internships/Create" class="btn btn-primary">
+    Добави нов стаж
+</a>
 @if (!Model.Internships.Any())
 {
     <p>Все още няма добавени стажове.</p>
@@ -24,7 +19,8 @@ else
         <thead>
             <tr>
                 <th>Позиция</th>
-                <th>Организация</th>
+                <th>Компания</th>
+                <th>Категория</th>
                 <th>Град</th>
                 <th>Продължителност (седмици)</th>
                 <th>Описание</th>
@@ -36,6 +32,7 @@ else
                 <tr>
                     <td>@internship.Position</td>
                     <td>@internship.Organization</td>
+                    <td>@internship.Category</td>
                     <td>@internship.City</td>
                     <td>@internship.DurationWeeks</td>
                     <td>@internship.Description</td>
